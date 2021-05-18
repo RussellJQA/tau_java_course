@@ -9,7 +9,7 @@ Salespeople who exceed 10 sales get an additional bonus of $250
  */
 public class SalaryCalculator {
 
-    public static void main(String args []){
+    public static void main(String[] args) {
 
         // Initialize known values
         int salary = 1000;

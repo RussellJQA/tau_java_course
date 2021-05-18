@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class LogicalOrLoanQualifier {
 
-    public static void main(String args []){
+    public static void main(String[] args) {
 
         // Initialize what we know
         int requiredSalary = 30000;

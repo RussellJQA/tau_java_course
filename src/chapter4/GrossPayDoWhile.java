@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class GrossPayDoWhile {
 
-    public static void main(String args[]){
+    public static void main(String[] args){
 
         // Initialize known variables
         int rate = 15;
