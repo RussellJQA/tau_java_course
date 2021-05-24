@@ -1,6 +1,6 @@
 package exercises.project;
 
-import java.util.Random;
+import java.util.Scanner;
 
 /**
  * 3rd class - which:
@@ -14,43 +14,48 @@ import java.util.Random;
  */
 public class CoinTossGame {
 
+    // Member variables
+    private Scanner scanner;
+
     public static void main(String[] args) {
 
-        Player player1 = new Player("Russell");
-        Player player2 = new Player("Timothy");
+        CoinTossGame game = new CoinTossGame();
+        game.scanner = new Scanner(System.in);
 
-        int guess;
+        Player player1 = new Player("player 1", game.getPlayerName("player 1"));
+        Player player2 = new Player("player 2", game.getPlayerName("player 2"));
 
-        guess = getRandomGuess();
-        System.out.print("Player 1 guessed ");
-        Coin.printSide(guess);
-        System.out.println();
-        player1.setGuess(guess);
-
-        guess = getOppositeSide(guess);
-        System.out.print("Player 2 guessed ");
-        Coin.printSide(guess);
-        System.out.println();
-        player2.setGuess(guess);
+        player1.setGuess(game.getGuess());
+        player2.setGuess(player1.getGuess().equals(Coin.HEADS) ? Coin.TAILS : Coin.HEADS);
+        System.out.printf("Guess for player 2 set to '%s'%n", player2.getGuess());
 
         Coin coin = new Coin();
         coin.setSide(coin.flip());
 
-        if(coin.getSide() == player1.getGuess())
-            System.out.println("Player 1 won!");
-        else if(coin.getSide() == player2.getGuess())
-            System.out.println("Player 2 won!");
-   }
-
-    public static int getRandomGuess() {
-        Random r = new Random();
-        return r.nextInt(2);
+        // Report winner
+        String side = coin.getSide();
+        Player winner = side.equals(player1.getGuess()) ? player1 : player2;
+        reportWinner(side, winner);
     }
 
-    public static int getOppositeSide(int side) {
-        if(side == Coin.HEADS)
-            return Coin.TAILS;
-        else
-            return Coin.HEADS;
+    private String getPlayerName(String whichPlayer) {
+        System.out.printf("Enter name for %s: ", whichPlayer);
+        return scanner.next();
+    }
+
+    private String getGuess() {
+
+        String guess;
+
+        do {
+            System.out.printf("Enter a guess ('%s' or '%s') for player 1: ", Coin.HEADS, Coin.TAILS);
+            guess = scanner.next();
+        } while(!guess.equals(Coin.HEADS) && !guess.equals(Coin.TAILS));
+
+        return guess;
+    }
+
+    private static void reportWinner(String side, Player winner) {
+        System.out.printf("Coin toss landed '%s' up so %s (%s) won!%n", side, winner.getId(), winner.getName());
     }
 }

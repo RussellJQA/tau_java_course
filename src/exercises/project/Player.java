@@ -8,22 +8,24 @@ package exercises.project;
  */
 public class Player {
 
-    public String name;
-    public int guess;
+    // Member variables
+    private String id;
+    private String name;
+    private String guess;
 
-    public Player(String name) {
-        setName(name);
-    }
-
+    // Getters and Setters
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
+    public String getName() { return name; }
     public void setName(String name) {
         this.name = name;
     }
+    public String getGuess() { return guess; }
+    public void setGuess(String guess) { this.guess = guess; }
 
-    public int getGuess() {
-        return guess;
-    }
-
-    public void setGuess(int guess) {
-        this.guess = guess;
+    // Constructor
+    public Player(String id, String name) {
+        setId(id);
+        setName(name);
     }
 }

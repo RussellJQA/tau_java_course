@@ -11,33 +11,23 @@ import java.util.Random;
  */
 public class Coin {
 
-    public static final int HEADS = 0;
-    public static final int TAILS = 1;
+    // Static constants
+    public static final String HEADS = "Heads";
+    public static final String TAILS = "Tails";
 
-    public int side;
+    // Member variables
+    private String side;
 
-    public int flip() {
-        Random r = new Random();
-        setSide(r.nextInt(2));
-
-        System.out.print("Coin flipped to side: ");
-        printSide(getSide());
-        System.out.println();
-
-        return side;
-    }
-
-    public int getSide() { return side; }
-
-    public void setSide(int side) {
+    // Getters and Setters
+    public String getSide() { return side; }
+    public void setSide(String side) {
         this.side = side;
     }
 
-    public static void printSide(int side) {
-        if( side == HEADS)
-            System.out.print("heads");
-        else
-            System.out.print("tails");
+    public String flip() {
+        String side = new Random().nextBoolean() ? HEADS : TAILS;
+        setSide(side);
 
+        return side;
     }
 }
