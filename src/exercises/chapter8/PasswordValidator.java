@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class PasswordValidator {
 
-    private String username;
-    private String password;
+    private final String username;
+    private final String password;
 
     public PasswordValidator(String username, String password) {
         this.username = username;

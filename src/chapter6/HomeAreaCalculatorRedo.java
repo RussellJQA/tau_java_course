@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class HomeAreaCalculatorRedo {
 
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 

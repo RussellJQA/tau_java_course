@@ -6,34 +6,34 @@ public class Market {
 
         Fruit fruit = new Fruit();
         fruit.setCalories(50);
-        System.out.println("\nA piece of fruit has " + String.format("%s", fruit.getCalories()) + " calories");
+        System.out.printf("\nA piece of fruit has %s calories%n", fruit.getCalories());
         fruit.makeJuice();
 
         Apple apple1 = new Apple();
-        System.out.println("\napple1 has " + String.format("%s", apple1.getCalories()) + " calories");
+        System.out.printf("\napple1 has %s  calories%n", apple1.getCalories());
         apple1.makeJuice();
         apple1.peel();
         apple1.removeSeeds();
 
         Fruit apple2 = new Apple();
-        System.out.println("\napple2 has " + String.format("%s", apple2.getCalories()) + " calories");
+        System.out.printf("\napple2 has %s calories", apple2.getCalories());
         apple2.makeJuice();
         ((Apple) apple2).peel();
         ((Apple) apple2).removeSeeds();
 
         Banana banana1 = new Banana();
-        System.out.println("\nbanana1 has " + String.format("%s", banana1.getCalories()) + " calories");
+        System.out.printf("\nbanana1 has %s calories", banana1.getCalories());
         banana1.makeJuice();
         banana1.peel();
 
         Lemon lemon1 = new Lemon();
-        System.out.println("\nlemon1 has " + String.format("%s", lemon1.getCalories()) + " calories");
+        System.out.printf("\nlemon1 has %s calories%n", lemon1.getCalories());
         lemon1.makeJuice();
         lemon1.peel();
         lemon1.removeSeeds();
 
         Fruit lemon2 = new Lemon();
-        System.out.println("\nlemon2 has " + String.format("%s", lemon2.getCalories()) + " calories");
+        System.out.printf("\nlemon2 has %s calories", lemon2.getCalories());
         lemon2.makeJuice();
         ((Lemon) lemon2).peel();
         ((Lemon) lemon2).removeSeeds();

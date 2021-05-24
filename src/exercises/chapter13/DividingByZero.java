@@ -6,7 +6,7 @@ public class DividingByZero {
         divideByZero();
     }
 
-    public static void divideByZero() {
+    private static void divideByZero() {
         try {
             int c = 30/0;
             System.out.println(c);
